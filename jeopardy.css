@@ -1,0 +1,106 @@
+/* some colors you may find useful:
+  #115ff4
+  #060ce9
+  #28a200
+  #8d2ab5
+  #74119c
+*/
+.table td{
+  width: 15%;
+  text-align: center; 
+  table-layout: fixed;
+}
+
+.table{
+  height: 100%;
+  table-layout: fixed;
+}
+
+table,thead,tr,tbody,th,td {
+  text-align: center;
+}
+
+/* This is the submit button styles 
+https://www.codeinwp.com/snippets/submit-button-with-pure-css-loading-spinner/*/
+button {
+  display: block;
+  margin: 0 auto;
+  padding: .6em .8em;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: .4em;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: all 1s;
+}
+
+/* focus/disabled styles, you can change this for accessibility 
+https://www.codeinwp.com/snippets/submit-button-with-pure-css-loading-spinner/*/
+button:focus, button:disabled {
+  outline: none;
+  background: #aaa;
+}
+
+/* 
+This is the space for the spinner to appear, applied to the button 
+https://www.codeinwp.com/snippets/submit-button-with-pure-css-loading-spinner/
+*/
+.spin {
+  padding-left: 2.5em;
+  display: block;
+}
+
+/*
+position of the spinner when it appears, you might have to change these values 
+https://www.codeinwp.com/snippets/submit-button-with-pure-css-loading-spinner/
+*/
+.spin .spinner {
+  left: -.6em;
+  top: .4em;
+  width: 2.5em;
+  display: block;
+  position: absolute;
+}
+
+/*
+spinner animation 
+https://www.codeinwp.com/snippets/submit-button-with-pure-css-loading-spinner/
+*/
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 
+The actual spinner element is a pseudo-element 
+https://www.codeinwp.com/snippets/submit-button-with-pure-css-loading-spinner/
+*/
+.spin .spinner::before {
+  content: "";
+  width: 1.5em; /* Size of the spinner */
+  height: 1.5em; /* Change as desired */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: solid .35em #999; /* Thickness/color of spinner track */
+  border-bottom-color: #555; /* Color of variant spinner piece */
+  animation: .8s linear infinite spinner; /* speed of spinner */
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+/* 
+optional, but it will affect the size if changed 
+https://www.codeinwp.com/snippets/submit-button-with-pure-css-loading-spinner/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
